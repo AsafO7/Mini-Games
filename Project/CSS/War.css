@@ -1,0 +1,307 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  position: relative;
+  overflow: auto;
+}
+
+nav {
+  background: rgb(255, 113, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 113, 0, 1) 0%,
+    rgba(126, 65, 16, 1) 50%,
+    rgba(60, 31, 7, 1) 85%
+  );
+}
+
+/* Between 420px to 612px */
+
+.board {
+  height: 88vh;
+  background: rgb(38, 136, 55);
+  background: linear-gradient(
+    90deg,
+    rgba(38, 136, 55, 1) 0%,
+    rgba(0, 255, 68, 1) 50%,
+    rgba(38, 136, 55, 1) 100%
+  );
+  perspective: 1000px;
+}
+
+h2 {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+#info-row {
+  border-bottom: 2px solid black;
+  padding: 6px;
+}
+
+#comment {
+  padding-top: 5px;
+}
+
+#play-button {
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+}
+
+#cards-row {
+  perspective: 1000px;
+  justify-content: center;
+}
+
+.game-card1,
+.game-card2 {
+  margin-right: 30px;
+}
+
+.warCard1,
+.warCard2,
+.warCard3,
+.warCard4 {
+  background: url("../War/cards/backcard.png");
+  background-size: contain;
+}
+
+.playcard1,
+.playcard2,
+.backcard3,
+img:not(.logo) {
+  border: 2px solid brown;
+  border-radius: 10%;
+  width: 83px;
+  height: 128px;
+  background: url("../War/cards/backcard.png");
+  background-size: contain;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  position: absolute;
+}
+
+.playcard1:active,
+.playcard2:active {
+  transform: scale(0.97);
+  transition: transform 0.4s;
+}
+
+.playcard1.flip {
+  transform: rotateY(180deg) translateX(123%) scaleX(-1);
+  background-size: contain;
+}
+
+.playcard2.flip {
+  transform: rotateY(180deg) translateX(-123%) scaleX(-1);
+  background-size: contain;
+}
+
+@keyframes flip1 {
+  100% {
+    transform: rotateY(180deg) translateX(125%) scaleX(-1);
+    background-size: contain;
+    z-index: 1;
+  }
+}
+
+@keyframes flip1-remove {
+  100% {
+    transform: rotateY(180deg) translateX(-125%) scaleX(-1);
+    background-size: contain;
+    z-index: 1;
+  }
+}
+
+@keyframes flip2 {
+  100% {
+    transform: rotateY(180deg) translateX(-125%) scaleX(-1);
+    background-size: contain;
+    z-index: 1;
+  }
+}
+
+@keyframes flip2-remove {
+  100% {
+    transform: rotateY(180deg) translateX(125%) scaleX(-1);
+    background-size: contain;
+    z-index: 1;
+  }
+}
+
+/* Below 420px */
+
+@media all and (max-width: 420px) {
+  #card-spot1,
+  #card-spot2,
+  .backcard {
+    max-width: 100%;
+  }
+
+  h2,
+  h3,
+  #play-button {
+    font-size: 18px;
+  }
+
+  #play-button {
+    width: 80px;
+    height: 25px;
+  }
+
+  .playcard1,
+  .playcard2,
+  .backcard3,
+  img {
+    border: 2px solid brown;
+    border-radius: 10%;
+    width: 60px;
+    height: 90px;
+  }
+
+  .board {
+    height: 112vh;
+  }
+
+  .playcard1.flip {
+    transform: rotateY(180deg) translateX(130%) scaleX(-1);
+  }
+
+  .playcard2.flip {
+    transform: rotateY(180deg) translateX(-130%) scaleX(-1);
+  }
+
+  @keyframes flip1 {
+    100% {
+      transform: rotateY(180deg) translateX(105%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+
+  @keyframes flip1-remove {
+    100% {
+      transform: rotateY(180deg) translateX(-105%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+
+  @keyframes flip2 {
+    100% {
+      transform: rotateY(180deg) translateX(-105%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+
+  @keyframes flip2-remove {
+    100% {
+      transform: rotateY(180deg) translateX(105%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+}
+
+/* Above 612px */
+
+@media all and (min-width: 612px) {
+  .playcard1.flip {
+    transform: rotateY(180deg) translateX(-105%) scaleX(-1);
+  }
+
+  .playcard2.flip {
+    transform: rotateY(180deg) translateX(105%) scaleX(-1);
+  }
+
+  @keyframes flip1 {
+    100% {
+      transform: rotateY(180deg) translateX(-100%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+
+  @keyframes flip1-remove {
+    100% {
+      transform: rotateY(180deg) translateX(100%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+
+  @keyframes flip2 {
+    100% {
+      transform: rotateY(180deg) translateX(100%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+
+  @keyframes flip2-remove {
+    100% {
+      transform: rotateY(180deg) translateX(-100%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+}
+
+/* Above 762px */
+
+@media all and (min-width: 762px) {
+  .playcard1.flip {
+    transform: rotateY(180deg) translateX(-120%) scaleX(-1);
+  }
+
+  .playcard2.flip {
+    transform: rotateY(180deg) translateX(120%) scaleX(-1);
+  }
+
+  @keyframes flip1 {
+    100% {
+      transform: rotateY(180deg) translateX(-120%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+
+  @keyframes flip1-remove {
+    100% {
+      transform: rotateY(180deg) translateX(120%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+
+  @keyframes flip2 {
+    100% {
+      transform: rotateY(180deg) translateX(120%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+
+  @keyframes flip2-remove {
+    100% {
+      transform: rotateY(180deg) translateX(-120%) scaleX(-1);
+      background-size: contain;
+      z-index: 1;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: rgb(1, 0, 20);
+  background: linear-gradient(
+    90deg,
+    rgb(49, 40, 187) 0%,
+    rgb(39, 39, 231) 0%,
+    rgb(1, 145, 173) 100%
+  );
+}
+
+#main {
+  max-width: 100%;
+}
+
+.col {
+  flex-grow: 0;
+}
+
+.card {
+  margin: 30px auto;
+  background: #dfd9d9;
+}
+
+.card:hover {
+  transition: all 0.3s;
+  box-shadow: 10px 7px 7px rgba(32, 30, 30, 0.8);
+}
+
+img {
+  height: 220px;
+}

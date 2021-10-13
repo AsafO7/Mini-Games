@@ -1,0 +1,192 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  position: relative;
+  overflow: auto;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+nav {
+  border-bottom: 1px solid black;
+}
+
+/* Main content */
+
+.container {
+  background: rgb(13, 116, 163);
+  border-radius: 40% 40%;
+  margin-top: 20px;
+  max-width: 60%;
+  box-shadow: 1px 3px 5px 13px rgb(7, 62, 73);
+}
+
+#startButton {
+  width: 48px;
+  height: 25px;
+  align-self: center;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.8);
+  font-size: 15px;
+}
+
+#green,
+#red,
+#yellow,
+#blue {
+  width: 40px;
+  height: 40px;
+  border-radius: 50% 50%;
+  margin: 5px;
+  cursor: pointer;
+  opacity: 0.5;
+  border: none;
+}
+
+#green {
+  background: url("../Simon/buttons/button-green.png");
+  background-size: cover;
+}
+
+#red {
+  background: url("../Simon/buttons/button-red.png");
+  background-size: cover;
+  margin-right: 25px;
+}
+
+#yellow {
+  background: url("../Simon/buttons/button-yellow.png");
+  background-size: cover;
+}
+
+#blue {
+  background: url("../Simon/buttons/button-blue.png");
+  background-size: cover;
+}
+
+#scoreBoard {
+  height: 33vh;
+  align-content: center;
+  border-top: 1px solid black;
+  border-bottom: none;
+}
+
+.highScore,
+.combo,
+.result {
+  font-size: 17px;
+  font-weight: bold;
+  color: black;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+@media all and (min-width: 276px) {
+  .container {
+    max-width: 60%;
+  }
+}
+
+@media all and (min-width: 400px) {
+  .container {
+    max-width: 42%;
+  }
+
+  #scoreBoard {
+    height: 54vh;
+  }
+
+  .highScore,
+  .combo,
+  .result {
+    font-size: 20px;
+    font-weight: bold;
+    width: auto;
+  }
+}
+
+/* Desktop */
+
+@media all and (min-width: 768px) {
+  /* Simon */
+
+  .container {
+    max-width: 50%;
+  }
+
+  #startButton {
+    width: 100px;
+    height: 50px;
+    align-self: center;
+    margin-right: 35px;
+    cursor: pointer;
+    font-size: 25px;
+    box-shadow: 1px 1px 3px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  #green,
+  #red,
+  #yellow,
+  #blue {
+    width: 80px;
+    height: 80px;
+    margin: 15px;
+  }
+
+  #red {
+    margin-right: 45px;
+  }
+
+  .highScore,
+  .combo,
+  .result {
+    font-size: 26px;
+    font-weight: normal;
+  }
+
+  #scoreBoard {
+    height: 26vh;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .container {
+    max-width: 50%;
+  }
+
+  #startButton {
+    width: 120px;
+    height: 60px;
+    align-self: center;
+    margin-right: 35px;
+    cursor: pointer;
+  }
+
+  #green,
+  #red,
+  #yellow,
+  #blue {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+  }
+
+  #red {
+    margin-right: 60px;
+  }
+
+  #scoreBoard {
+    height: 19vh;
+  }
+}
